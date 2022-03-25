@@ -22,4 +22,14 @@ app.get("/api/compliment", (req, res) => {
   
 });
 
+app.get("/api/cookie", (req, res) => {
+  const cookies = ["A faithful friend is a strong defense.", "A soft voice may be awfully persuasive.", "All your hard work will soon pay off.", "An inch of time is an inch of gold.", "Any day above ground is a good day.",
+];
+
+  let cookieIndex = Math.floor(Math.random() * cookies.length);
+  let randomCookie = cookies[cookieIndex];
+
+  res.status(200).send(randomCookie)
+});
+
 app.listen(4000, () => console.log("Server running on 4000"));

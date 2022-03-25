@@ -16,5 +16,41 @@
             });
       };
     </script>
+    <button id="fortuneButton">Get a fortune</button>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+      document.getElementById("fortuneButton").onclick = function () {
+        axios.get("http://localhost:4000/api/cookie/")
+            .then(function (response){
+              const data = response.data;
+              alert(data);
+            });
+      };
+    </script>
+
+
+
+
+
+
+
+
+    <form id="contact">
+      Your name:
+      <input type="text" /><br>
+      
+
+      Message:
+      <input type="textarea" /><br>
+      What do you think of us?<br>
+      <input type="checkbox" id="google" />
+      <lable for="google">Good</lable><br>
+      <input type="checkbox" id="afriend" />
+      <lable for="afriend">Bad</lable><br>
+      <input type="checkbox"  id="other"/>
+      <lable for="other">Or just ok</lable><br>
+      <input type="submit" />	
+    </form>
   </body>
 </html>
